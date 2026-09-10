@@ -4,12 +4,15 @@ FROM node:${NODE_VERSION}
 ENV PORT=3001
 ENV MESSAGE="Hello from mynode_app!"
 
-RUN useradd -m mynodeuser
-USER mynodeuser
-
 WORKDIR /app
 
+COPY package*.json ./
+RUN npm install
+
 COPY . .
+
+RUN useradd -m mynodeuser
+USER mynodeuser
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
   CMD ["curl", "-f", "http://localhost:3001"]

@@ -1,5 +1,6 @@
 ARG NODE_VERSION=24.21.0
-FROM node:${NODE_VERSION}
+# FROM node:${NODE_VERSION}
+FROM node:${NODE_VERSION}-slim
 
 ENV PORT=3001
 ENV MESSAGE="Hello from mynode_app!"

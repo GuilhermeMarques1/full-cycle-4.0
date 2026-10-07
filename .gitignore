@@ -1,0 +1,3 @@
+## Ignore the Docker cache directory created by docker buildx build --cache-to type=local,dest=docker-cache --cache-from type=local,src=docker-cache
+
+docker-cache
